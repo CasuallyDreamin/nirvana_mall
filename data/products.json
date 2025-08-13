@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "name": "Luxury Watch",
+        "category": "Luxury Brands",
+        "price": 4999.99
+    },
+    {
+        "id": 2,
+        "name": "Gourmet Burger",
+        "category": "Food Court",
+        "price": 12.50
+    },
+    {
+        "id": 3,
+        "name": "Arcade Game Pass",
+        "category": "Entertainment",
+        "price": 20.00
+    }
+]
