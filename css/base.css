@@ -53,42 +53,60 @@ nav a {
 nav a:hover {
     color: var(--accent);
 }
-
-/* Container for dropdown */
+/* Dropdown container */
 .dropdown {
     position: relative;
 }
 
-/* Dropdown menu box */
+/* First-level dropdown */
 .dropdown-content {
     display: none;
     position: absolute;
-    top: 100%; /* directly below parent */
+    top: 100%;
     left: 0;
     background: var(--background, #fff);
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    min-width: 160px;
+    min-width: 180px;
     z-index: 10;
 }
 
-/* Dropdown links */
 .dropdown-content a {
     display: block;
-    margin: 0; /* reset the margin from nav a */
+    margin: 0;
     padding: 10px 15px;
     color: var(--text);
     background: var(--background, #fff);
     white-space: nowrap;
 }
 
-/* Hover states */
 .dropdown-content a:hover {
     background: var(--accent-light, #f0f0f0);
     color: var(--accent);
 }
 
-/* Show on hover */
+/* Show first-level dropdown on hover */
 .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Submenu container inside dropdown */
+.dropdown-sub {
+    position: relative;
+}
+
+/* Second-level (flyout) dropdown */
+.dropdown-sub-content {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%; /* shift to the right of parent */
+    background: var(--background, #fff);
+    min-width: 180px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Show second-level on hover */
+.dropdown-sub:hover .dropdown-sub-content {
     display: block;
 }
 
