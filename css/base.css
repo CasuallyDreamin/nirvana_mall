@@ -54,6 +54,44 @@ nav a:hover {
     color: var(--accent);
 }
 
+/* Container for dropdown */
+.dropdown {
+    position: relative;
+}
+
+/* Dropdown menu box */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%; /* directly below parent */
+    left: 0;
+    background: var(--background, #fff);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    min-width: 160px;
+    z-index: 10;
+}
+
+/* Dropdown links */
+.dropdown-content a {
+    display: block;
+    margin: 0; /* reset the margin from nav a */
+    padding: 10px 15px;
+    color: var(--text);
+    background: var(--background, #fff);
+    white-space: nowrap;
+}
+
+/* Hover states */
+.dropdown-content a:hover {
+    background: var(--accent-light, #f0f0f0);
+    color: var(--accent);
+}
+
+/* Show on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
 /* MAIN */
 main {
     flex: 1;
