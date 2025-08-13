@@ -14,3 +14,54 @@
 .hero p {
   font-size: 1.2rem;
 }
+
+#products {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 40px 20px;
+  scroll-snap-type: x mandatory;
+}
+
+#products .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 250px; /* Set a fixed width for square aspect ratio */
+  height: 250px; /* Make the card square */
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #eee;
+  text-align: center;
+  scroll-snap-align: start;
+  transition: transform 0.3s ease;
+}
+
+#products .card h2 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+#products .card p {
+  font-size: 1rem;
+  color: var(--text-muted);
+}
+
+#products .card:hover {
+  transform: translateY(-5px); /* Add hover effect for interactivity */
+}
+
+#products::-webkit-scrollbar {
+  height: 8px;
+}
+
+#products::-webkit-scrollbar-thumb {
+  background-color: var(--primary);
+  border-radius: 10px;
+}
+
+#products::-webkit-scrollbar-track {
+  background: #f0f0f0;
+}

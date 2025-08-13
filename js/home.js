@@ -1,11 +1,13 @@
 window.addEventListener('DOMContentLoaded', () => {
     const productsSection = document.querySelector('#products'); // Get the products section
 
-    const dataUrl = 'https://raw.githubusercontent.com/your-username/repo-name/main/frontend/data/products.json';
+    const dataUrl = 'https://raw.githubusercontent.com/CasuallyDreamin/nirvana_mall/refs/heads/purist/data/products.json';
 
     fetch(dataUrl)
-        .then(res => res.json())
-        .then(products => {
+        .then(res => res.text())  // Get response as text first
+        .then(text => {
+            console.log(text);  // Log the raw response text
+            const products = JSON.parse(text);  // Manually parse the JSON
             products.forEach(p => {
                 const card = document.createElement('section');
                 card.className = 'card';
@@ -14,10 +16,8 @@ window.addEventListener('DOMContentLoaded', () => {
                     <p>Category: ${p.category}</p>
                     <p>Price: $${p.price.toFixed(2)}</p>
                 `;
-                
-                // Append the card to the products section
                 productsSection.appendChild(card);
             });
         })
-        .catch(err => console.error(err));
+        .catch(err => console.error('Error loading or parsing products:', err));
 });
