@@ -1,48 +1,48 @@
 window.addEventListener('DOMContentLoaded', () => {
-    const productsSection = document.querySelector('#products');
+    const productsSection = document.querySelector('#products'); // Main container
 
     const dataUrl = 'https://raw.githubusercontent.com/CasuallyDreamin/nirvana_mall/refs/heads/purist/data/products.json';
 
     fetch(dataUrl)
-        .then(res => res.json())
-        .then(products => {
+        .then(res => res.text())
+        .then(text => {
+            const products = JSON.parse(text);
+
             // Group products by category
             const categories = {};
             products.forEach(p => {
-                if (!categories[p.category]) {
-                    categories[p.category] = [];
-                }
+                if (!categories[p.category]) categories[p.category] = [];
                 categories[p.category].push(p);
             });
 
-            // Render each category section
+            // For each category, create a row and append cards
             for (const [categoryName, items] of Object.entries(categories)) {
-                const categorySection = document.createElement('div');
-                categorySection.className = 'category';
-
-                // Category heading
-                const heading = document.createElement('h2');
-                heading.textContent = categoryName;
-                categorySection.appendChild(heading);
-
-                // Row for products in this category
                 const row = document.createElement('div');
                 row.className = 'product-row';
 
+                const title = document.createElement('h2');
+                title.textContent = categoryName;
+                row.appendChild(title);
+
+                const rowContainer = document.createElement('div');
+                rowContainer.className = 'row-container';
                 items.forEach(p => {
-                    const card = document.createElement('div');
+                    const card = document.createElement('section');
                     card.className = 'card';
                     card.innerHTML = `
-                        <img src="${p.image}" alt="${p.name}">
-                        <h3>${p.name}</h3>
-                        <p>$${p.price.toFixed(2)}</p>
+                        <img src="${p.image}" alt="${p.name}" />
+                        <div class="card-details">
+                            <h3>${p.name}</h3>
+                            <p>Price: $${p.price.toFixed(2)}</p>
+                            <p>${p.detail}</p>
+                        </div>
                     `;
-                    row.appendChild(card);
-                });
+            rowContainer.appendChild(card);
+        });
 
-                categorySection.appendChild(row);
-                productsSection.appendChild(categorySection);
+                row.appendChild(rowContainer);
+                productsSection.appendChild(row);
             }
         })
-        .catch(err => console.error('Error loading products:', err));
+        .catch(err => console.error('Error loading or parsing products:', err));
 });

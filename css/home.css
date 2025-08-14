@@ -1,9 +1,11 @@
+/* HERO */
 .hero {
-  grid-column: 1 / -1; /* Make hero span full width */
+  grid-column: 1 / -1;
   background: linear-gradient(to right, var(--primary), var(--accent));
   color: white;
   padding: 60px 30px;
   border-radius: 10px;
+  text-align: center;
 }
 
 .hero h1 {
@@ -15,123 +17,7 @@
   font-size: 1.2rem;
 }
 
-#products {
-  display: flex;
-  overflow-x: auto;
-  gap: 20px;
-  padding: 40px 20px;
-  scroll-snap-type: x mandatory;
-}
-
-#products .card {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 250px; /* Set a fixed width for square aspect ratio */
-  height: 250px; /* Make the card square */
-  background: #f9f9f9;
-  padding: 20px;
-  border-radius: 10px;
-  border: 1px solid #eee;
-  text-align: center;
-  scroll-snap-align: start;
-  transition: transform 0.3s ease;
-}
-
-#products .card h2 {
-  font-size: 1.1rem;
-  margin-bottom: 10px;
-}
-
-#products .card p {
-  font-size: 1rem;
-  color: var(--text-muted);
-}
-
-#products .card:hover {
-  transform: translateY(-5px); /* Add hover effect for interactivity */
-}
-
-#products::-webkit-scrollbar {
-  height: 8px;
-}
-
-#products::-webkit-scrollbar-thumb {
-  background-color: var(--primary);
-  border-radius: 10px;
-}
-
-#products::-webkit-scrollbar-track {
-  background: #f0f0f0;
-}
-
-.category {
-  margin-bottom: 40px;
-}
-
-.category h2 {
-  font-size: 1.6rem;
-  margin: 0 20px 15px;
-  color: var(--text);
-}
-
-/* Product row inside each category */
-.category .product-row {
-  display: flex;
-  overflow-x: auto;
-  gap: 20px;
-  padding: 0 20px;
-  scroll-snap-type: x mandatory;
-}
-
-.category .product-row::-webkit-scrollbar {
-  height: 8px;
-}
-
-.category .product-row::-webkit-scrollbar-thumb {
-  background-color: var(--primary);
-  border-radius: 10px;
-}
-
-.category .product-row::-webkit-scrollbar-track {
-  background: #f0f0f0;
-}
-
-/* Cards (reuse your style but slightly adapted for image) */
-.category .card {
-  flex: 0 0 auto; /* Prevent shrinking */
-  width: 250px;
-  background: #f9f9f9;
-  padding: 0; /* No padding to let image fill */
-  border-radius: 10px;
-  border: 1px solid #eee;
-  text-align: center;
-  scroll-snap-align: start;
-  transition: transform 0.3s ease;
-  overflow: hidden;
-}
-
-.category .card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-}
-
-.category .card h3 {
-  font-size: 1.1rem;
-  margin: 10px 0 5px;
-}
-
-.category .card p {
-  font-size: 1rem;
-  color: var(--text-muted);
-  margin-bottom: 10px;
-}
-
-.category .card:hover {
-  transform: translateY(-5px);
-}
+/* CATEGORIES */
 .category {
   margin-bottom: 40px;
 }
@@ -139,36 +25,72 @@
 .category h2 {
   font-size: 1.5rem;
   margin: 0 0 15px 20px;
+  color: var(--text);
+  padding:20px;
 }
 
+/* PRODUCT ROW */
 .product-row {
   display: flex;
-  overflow-x: auto;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+.row-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.row-container::-webkit-scrollbar-thumb {
+  background-color: var(--primary);
+  border-radius: 10px;
+}
+
+.row-container::-webkit-scrollbar-track {
+  background: #f0f0f0;
+}
+.row-container {
+  display: flex !important;  /* override grid from base CSS */
   gap: 20px;
-  padding: 0 20px;
+  overflow-x: auto;
+  padding: 0 20px 10px;
   scroll-snap-type: x mandatory;
 }
 
-.product-row .card {
-  flex: 0 0 auto;
-  width: 200px;
+.row-container .card {
+  flex: 0 0 calc((100% - 20px) / 2); /* 2 per row */
+  display: flex;
+  flex-direction: column;
   background: #f9f9f9;
   border-radius: 10px;
-  padding: 15px;
-  text-align: center;
   border: 1px solid #eee;
   scroll-snap-align: start;
-  transition: transform 0.3s ease;
+  overflow: hidden;
 }
 
-.product-row .card img {
+.row-container .card img {
   width: 100%;
-  height: 150px;
   object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 10px;
+  border-radius: 8px 8px 0 0;
+  height:300px;
 }
 
-.product-row .card:hover {
+.row-container .card .card-details {
+  padding: 10px;
+}
+
+.row-container .card .card-details h3,
+.row-container .card .card-details h2 {
+  font-size: 1.1rem;
+  margin: 5px 0;
+}
+
+.row-container .card .card-details p {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin-bottom: 0;
+}
+
+.row-container .card:hover {
   transform: translateY(-5px);
 }
