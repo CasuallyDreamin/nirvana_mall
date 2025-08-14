@@ -46,3 +46,10 @@ window.addEventListener('DOMContentLoaded', () => {
         })
         .catch(err => console.error('Error loading or parsing products:', err));
 });
+
+const toggleBtn = document.querySelector('.nav-toggle');
+const navMenu = document.querySelector('.nav-menu');
+
+toggleBtn.addEventListener('click', () => {
+    navMenu.classList.toggle('show');
+});

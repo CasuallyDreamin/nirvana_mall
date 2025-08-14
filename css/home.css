@@ -95,6 +95,16 @@
   transform: translateY(-5px);
 }
 
+
+/* Hamburger button */
+.nav-toggle {
+    display: none;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
 /* Tablets: 2 cards per row */
 @media (max-width: 992px) {
     .card {
@@ -106,5 +116,44 @@
 @media (max-width: 600px) {
     .card {
         flex: 0 0 100%;
+    }
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+    header {
+        padding: 0 20px;
+    }
+
+    nav.nav-menu {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        background: var(--bg);
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        border-top: 1px solid #ddd;
+        padding: 10px 20px;
+    }
+
+    nav.nav-menu.show {
+        display: flex;
+    }
+
+    .nav-toggle {
+        display: block;
+    }
+
+    nav a, .dropdown > a {
+        margin-left: 0;
+    }
+
+    .dropdown-content, .dropdown-sub-content {
+        position: relative;
+        top: 0;
+        left: 0;
+        box-shadow: none;
     }
 }
