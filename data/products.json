@@ -1,20 +1,107 @@
 [
   {
-      "id": 1,
-      "name": "Luxury Watch",
-      "category": "Luxury Brands",
-      "price": 4999.99
+    "id": 1,
+    "name": "Luxury Watch",
+    "category": "Luxury Brands",
+    "price": 4999.99,
+    "image": "assets/images/luxury-watch.jpg"
   },
   {
-      "id": 2,
-      "name": "Gourmet Burger",
-      "category": "Food Court",
-      "price": 12.50
+    "id": 2,
+    "name": "Designer Handbag",
+    "category": "Luxury Brands",
+    "price": 2499.99,
+    "image": "assets/images/designer-handbag.jpg"
   },
   {
-      "id": 3,
-      "name": "Arcade Game Pass",
-      "category": "Entertainment",
-      "price": 20.00
+    "id": 3,
+    "name": "Gold Necklace",
+    "category": "Luxury Brands",
+    "price": 3499.50,
+    "image": "assets/images/gold-necklace.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Premium Sunglasses",
+    "category": "Luxury Brands",
+    "price": 799.99,
+    "image": "assets/images/premium-sunglasses.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Luxury Perfume",
+    "category": "Luxury Brands",
+    "price": 199.99,
+    "image": "assets/images/luxury-perfume.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Gourmet Burger",
+    "category": "Food Court",
+    "price": 12.50,
+    "image": "assets/images/gourmet-burger.jpg"
+  },
+  {
+    "id": 7,
+    "name": "Italian Pasta",
+    "category": "Food Court",
+    "price": 15.00,
+    "image": "assets/images/italian-pasta.jpg"
+  },
+  {
+    "id": 8,
+    "name": "Sushi Platter",
+    "category": "Food Court",
+    "price": 22.00,
+    "image": "assets/images/sushi-platter.jpg"
+  },
+  {
+    "id": 9,
+    "name": "Vegan Salad",
+    "category": "Food Court",
+    "price": 10.50,
+    "image": "assets/images/vegan-salad.jpg"
+  },
+  {
+    "id": 10,
+    "name": "Ice Cream Sundae",
+    "category": "Food Court",
+    "price": 8.00,
+    "image": "assets/images/ice-cream-sundae.jpg"
+  },
+  {
+    "id": 11,
+    "name": "Arcade Game Pass",
+    "category": "Entertainment",
+    "price": 20.00,
+    "image": "assets/images/arcade-pass.jpg"
+  },
+  {
+    "id": 12,
+    "name": "Movie Ticket",
+    "category": "Entertainment",
+    "price": 10.00,
+    "image": "assets/images/movie-ticket.jpg"
+  },
+  {
+    "id": 13,
+    "name": "Bowling Session",
+    "category": "Entertainment",
+    "price": 15.00,
+    "image": "assets/images/bowling-session.jpg"
+  },
+  {
+    "id": 14,
+    "name": "Escape Room",
+    "category": "Entertainment",
+    "price": 25.00,
+    "image": "assets/images/escape-room.jpg"
+  },
+  {
+    "id": 15,
+    "name": "VR Experience",
+    "category": "Entertainment",
+    "price": 30.00,
+    "image": "assets/images/vr-experience.jpg"
   }
 ]
